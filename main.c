@@ -2,100 +2,133 @@
 #include <stdlib.h>
 
 int main() {
-    int selection;
+    int choice;
     int price;
-    int amount;
+    int number_of_notes;
+    int number_of_coins;
+    int credit;
+    int change;
 
-    //welcome to vending machine preoject//
+    //welcome to vending machine project//
    printf("Select an item: \n");
-    printf("1. Soda       - 1500 UGX\n");
-    printf("2. Water     - 1000 UGX\n");
-    printf("3. Juice     - 2000 UGX\n");
-    printf("4. Crisps    - 1200 UGX\n");
-    printf("5. Chocolate - 2500 UGX\n");
-return 0;
-   int item_number;
-   int credit;
-   int quantity;
-   int change;
-   //Prompt the user for item number
-printf("Enter item number: \n");
-scanf("%d",&item_number);
-//Prompt the user for item quantity
-printf("Enter item quantity: \n");
-scanf("%d", &quantity);
-//Prompt the user to insert the amount//
-printf("Enter your money: \n");
-scanf("%d", &credit);
-//Get the price of the selected item
-if (quantity >=1 &&item_number <=4) {
-     int price = (price[item_number -1 ]);
-//Adjust index since array is 0-based
-} else {
-printf("Invalid item number.\n");
-return 1;
-}
-//Compare credit with the price
-if (credit <price) {
-    printf("Insufficient funds. Please add more money.\n");}
-    if (credit == price) {
-        printf("Comfirm purchase.\n",item_number);
-    }
-else (credit > price); {
-        printf("Dispense item. Your change is %d UGX.\n", item_number, credit - price);
-return 0;
-}
-switch (change)
+    printf("1. Coke       - 1500 UGX\n");
+    printf("2. Pepsi     - 1000 UGX\n");
+    printf("3. Sprite     - 1500 UGX\n");
+    printf("4. Fanta    - 1500 UGX\n");
+    printf("5. Mirinda - 1000 UGX\n");
+    printf("6. Exit\n\n");
 
-   case 1:
-       number_of_notes =change/50000;
-       change = change-(number_of_notes*50000);
-       printf("Change = %d\n", change);
-       break;
-    case 2:
-       number_of_notes =change/20000;
-       change = change-(number_of_notes*20000);
-       printf("Change = %d\n", change);
-       break;
-    case 3:
-       number_of_notes =change/10000;
-       change = change-(number_of_notes*10000);
-       printf("Change = %d\n", change);
-    case 4:
-       number_of_notes =change/5000;
-       change = change-(number_of_notes*5000);
-       printf("Change = %d\n", change);
-       break;
-    case 5:
-       number_of_notes =change/2000;
-       change = change-(number_of_notes*2000);
-       printf("Change = %d\n", change);
-       break;
-    case 6:
+   //Prompt the user for item number
+printf("Enter your choice: \n");
+scanf("%d",&choice);
+
+if (choice ==1)
+{
+    {
+price =1500;
+printf("You selected Coke. Insert UGX%d: ", price);
+}
+else if (choice ==2)
+{
+price =1000;
+printf("You selected Pepsi. Insert UGX%d: ", price);
+}
+else if (choice ==3) {
+price =1500;
+printf("You selected Sprite. Insert UGX%d: ", price);
+}
+else if (choice ==4) {
+price =1500;
+printf("You selected Fanta. Insert UGX%d: ", price);
+}
+else if (choice == 5) {
+price =1000;
+printf("You selected Mirinda. Insert UGX%d: ", price);
+}
+else if (choice ==6)
+{printf("Thank you! Have a nice day.\n");
+
+return 0;
+}
+    else
+     printf("Invalid selection Please try again.\n");
+return 0;
+} 
+
+//Prompt the user to insert the amount//
+printf("Enter your credit: \n");
+scanf("%d", &credit);
+//Compare credit with the price
+if(credit >= price) {
+printf("Dispensing your item.\n);
+
+  
+
+    if (credit > price) {
+        change = credit - price;
+        printf("Your change is %d UGX.\n", change);
+
+        
+//CALCULATE AND DISPLAY DENOMINATIONS
+if (change >=50000){
+number_of_notes =change/50000;
+change = change-(number_of_notes*50000);
+printf("Change = %d\n", change);
+}
+if (change >=20000){
+number_of_notes =change/20000;
+change = change-(number_of_notes*20000);
+printf("Change = %d\n", change);
+}
+if (change >=10000){ 
+number_of_notes =change/10000;
+change = change-(number_of_notes*10000);
+printf("Change = %d\n", change);
+}
+if (change >=5000){      
+number_of_notes =change/5000;
+change = change-(number_of_notes*5000);
+printf("Change = %d\n", change);
+}
+if (change >=2000){
+number_of_notes =change/2000;
+change = change-(number_of_notes*2000);
+printf("Change = %d\n", change);
+}
+if (change >=1000){
        number_of_notes =change/1000;
        change = change-(number_of_notes*1000);
        printf("Change = %d\n", change);
-       break;
-    case 7:
+}
+if (change >=500){
        number_of_coins =change/500;
        change = change-(number_of_coins*500);
        printf("Change = %d\n", change);
-       break;
-    case 8:
-       number_of_coins =change/200;
+}
+if (change >=200){ 
+number_of_coins =change/200;
        change = change-(number_of_coins*200);
        printf("Change = %d\n", change);
-       break;
-    case 9:
+}
+if (change >=100){
        number_of_coins =change/100;
        change = change-(number_of_coins*100);
        printf("Change = %d\n", change);
-       break;
-    case 10:
+}
+if (change >=50){
        number_of_coins =change/50;
        change = change-(number_of_coins*50);
        printf("Change = %d\n", change);
-       break;
+}
+}
+}
+        
+if (credit <price) {
+    printf("Insufficient funds. Please top up: UGX.%d\n" price - credit);
+  return 0;
+}
+return 0;
 
 
 
+}   
